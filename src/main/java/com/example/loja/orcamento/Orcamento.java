@@ -1,6 +1,7 @@
 package com.example.loja.orcamento;
 
 import com.example.loja.orcamento.situacao.EmAnalise;
+import com.example.loja.orcamento.situacao.Finalizado;
 import com.example.loja.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
@@ -11,7 +12,6 @@ public class Orcamento {
     private BigDecimal valor;
     private Integer quantidadeItens;
     private SituacaoOrcamento situacao;
-
 
     public Orcamento(BigDecimal valor, Integer quantidadeItens) {
         this.valor = valor;
@@ -59,5 +59,9 @@ public class Orcamento {
 
     public void setSituacao(SituacaoOrcamento situacao) {
         this.situacao = situacao;
+    }
+
+    public boolean isFinalizado(){
+        return situacao instanceof Finalizado;
     }
 }

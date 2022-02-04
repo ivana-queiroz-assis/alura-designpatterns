@@ -2,8 +2,6 @@ package com.example.loja.pedido;
 
 import com.example.loja.orcamento.Orcamento;
 import com.example.loja.pedido.acao.AcaoAposGerarPedido;
-import com.example.loja.pedido.acao.EnviarEmail;
-import com.example.loja.pedido.acao.SalvarPedidoBancoDados;
 
 import java.time.LocalDateTime;
 import java.util.List;
