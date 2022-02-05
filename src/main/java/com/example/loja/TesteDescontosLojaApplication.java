@@ -3,6 +3,7 @@ package com.example.loja;
 import com.example.loja.desconto.CalculadoraDescontos;
 import com.example.loja.imposto.CalculadoraImpostos;
 import com.example.loja.imposto.ISS;
+import com.example.loja.orcamento.ItemOrcamento;
 import com.example.loja.orcamento.Orcamento;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,12 +13,19 @@ import java.math.BigDecimal;
 public class TesteDescontosLojaApplication {
 
     public static void main(String[] args) {
-        Orcamento orcamento1 = new Orcamento(new BigDecimal("200"), 6);
-        Orcamento orcamento2 = new Orcamento(new BigDecimal("1000"), 1);
+        Orcamento primeiro = new Orcamento();
+        primeiro.adicionarItem(new ItemOrcamento(new BigDecimal("200")));
+
+        Orcamento segundo = new Orcamento();
+        segundo.adicionarItem(new ItemOrcamento(new BigDecimal("1000")));
+
+
+        Orcamento terceiro = new Orcamento();
+        segundo.adicionarItem(new ItemOrcamento(new BigDecimal("500")));
 
         CalculadoraDescontos calculadoraDescontos = new CalculadoraDescontos();
-        System.out.println(calculadoraDescontos.calcular(orcamento1));
-        System.out.println(calculadoraDescontos.calcular(orcamento2));
+        System.out.println(calculadoraDescontos.calcular(primeiro));
+        System.out.println(calculadoraDescontos.calcular(segundo));
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.loja.pedido;
 
+import com.example.loja.orcamento.ItemOrcamento;
 import com.example.loja.orcamento.Orcamento;
 import com.example.loja.pedido.acao.AcaoAposGerarPedido;
 
@@ -11,7 +12,8 @@ public class GeraPedidoHandler {
     private List<AcaoAposGerarPedido> acoes;
 
     public void execute(GeraPedido geraPedido){
-        Orcamento orcamento = new Orcamento(geraPedido.getValorOrçamento(), geraPedido.getQuantidadeItens());
+        Orcamento orcamento = new Orcamento();
+        orcamento.adicionarItem(new ItemOrcamento(geraPedido.getValorOrçamento()));
         String cliente = "Ivana Assis";
         Pedido pedido = new Pedido(cliente, LocalDateTime.now(), orcamento);
 

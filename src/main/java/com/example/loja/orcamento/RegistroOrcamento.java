@@ -1,6 +1,6 @@
 package com.example.loja.orcamento;
 
-import com.example.loja.DomainException;
+import com.example.loja.exception.DomainException;
 import com.example.loja.http.HttpAdapter;
 
 import java.util.Map;

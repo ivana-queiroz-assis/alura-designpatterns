@@ -1,4 +1,4 @@
-package com.example.loja;
+package com.example.loja.exception;
 
 public class DomainException extends RuntimeException {
     public DomainException(String message) {
